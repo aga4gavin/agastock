@@ -110,7 +110,7 @@ WEB_SERVER_BIND_IP= "0.0.0.0"
 #綁定的port. 若設定80，在ubnutu需執行下指令, 其中python要符合系統際版本
 # sh sudo 
 # sudo setcap 'cap_net_bind_service=+ep' /usr/bin/python3.8  
-WEB_SERVER_PORT= 80
+WEB_SERVER_PORT= 8080
 
 #網頁 column 都有超連接可排序，預設升冪排序(ascend_next=1)，寫在下表的 column 則改為降冪排序(ascend_next=0)
 #不該包含'訊息通知'，因為它大都空白，需要升冪(ascend_next=1)才會文字在前空白在後
