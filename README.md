@@ -39,19 +39,22 @@ LINE 通知:
 <img src="./doc/screenshot_linebot.jpg" width="40%" />   
 
 ## 如何開始
-1. 以下步驟於 Ubuntu 18.04 測試  
-1. 安裝 Python 及 agastock 需要的相依套件，Python 之外還需要300MB空間
+以下步驟於 Ubuntu 18.04 及 20.04 測試  
+
+1. 安裝 Python 及 agastock 需要的相依套件，加上 ta-lib 約占用 740MBytes 硬碟空間
     ```sh
-    sudo apt-get update
-    sudo apt install python3 python3-pip  
+    sudo apt-get update   #require arround 160MBytes on Ubuntu 20.04
+    sudo apt install python3 python3-pip    #require around 220MBytes
     pip3 install pandas numpy matplotlib pandas_datareader mplfinance yfinance \
-             twstock line-bot-sdk flask pyquery colorlog pytrends 
+             twstock line-bot-sdk flask pyquery colorlog pytrends  #require around 260MBytes
     ```
+    
 1. 更新 twstock 台股名稱資料庫，才能查詢到新上市股票的名稱，產業，及上市上櫃別。依照 yfinance 要求，查詢股價時將為上市台股代號加.TW，上櫃加.TWO，例如 91APP 為 6741.TWO  
     ```sh
     python3 -c "import twstock;twstock.__update_codes()"
     ```   
-1. 安裝 ta-lib 以計算布林通道及移動平均。直接 pip3 install 會失敗，改用手動編譯	
+    
+1. 安裝 ta-lib 以計算布林通道及移動平均。直接 pip3 install 會失敗，改用手動編譯。約需要100MBytes。
     ```sh
     wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
     tar -zxvf ta-lib-0.4.0-src.tar.gz  
@@ -61,6 +64,7 @@ LINE 通知:
     sudo make install  
     pip3 install ta-lib  
     ```  
+    
 1. 使用 matplotlib 繪圖，需設定中文字形，不然圖片的中文字無法顯示  
     1. 編輯 matplotlib 設定檔
         ```sh  
@@ -68,6 +72,7 @@ LINE 通知:
         echo $mpath   #ex. ~/.local/lib/python3.8/site-packages/matplotlib/mpl-data/matplotlibrc 
         vi $mpath
         ```
+        
     1. 將 font.family 與 font.**sans**-serif 註解(#)移除，並在 font.sans-serif 後方加入 Microsoft JhengHei (注意不是 font.**serif**，兩個很像)。範例：  
         <img src="./doc/matplotlib_setting.png" width="85%"/>   
       
