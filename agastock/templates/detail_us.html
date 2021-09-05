@@ -1,0 +1,14 @@
+<html>
+<head><title>agastock - {{ticker_name}}</title></head>
+  <link rel="stylesheet" type="text/css" href="/static/style.css"/>
+  <h1><a href="/tw">台股分析</a>&nbsp&nbsp&nbsp<a href="/us">美股分析</a></h1>
+  <body>
+  <p>布林通道繪圖(台灣時區): {{img_bb_time_str}}， 股價更新(美國時區): {{price_update_time_str}}</p>
+  <img src='{{html_img_bb}}'><br><br>
+  <p>Google Trend 繪圖: {{img_gtrend_time_str}}</p>
+  <img src='{{html_img_gtrend}}'><br><br>
+  <img src='{{html_img_ma}}'><br>
+  </body>
+</html>
+
+

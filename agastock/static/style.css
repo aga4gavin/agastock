@@ -1,0 +1,18 @@
+/* https://www.cjavapy.com/article/209/  */
+/* includes alternating gray and white with on-hover color */
+.stock_table {
+    font-size: 11pt; 
+    font-family: Arial;
+    border-collapse: collapse; 
+    border: 1px solid silver;
+}
+.stock_table td, th {
+    padding: 5px;
+}
+.stock_table tr:nth-child(even) {
+    background: #E0E0E0;
+}
+.stock_table tr:hover {
+    background: silver;
+    cursor: pointer;
+}

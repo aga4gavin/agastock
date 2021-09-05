@@ -1,0 +1,35 @@
+<html>
+<head><title>agastock 台股</title></head>
+  <link rel="stylesheet" type="text/css" href="/static/style.css"/>
+  <body>
+  <h1><a href="/tw">台股分析</a>&nbsp&nbsp&nbsp<a href="/us">美股分析</a></h1>
+  製表時間: {{csv_update_time_str}}，股價更新時間: {{price_update_time_str}}
+  
+  {% autoescape false %}
+  <p>{{ html_stock_table }}</P>
+  {% endautoescape %}
+
+  <p>*股價: Yahoo Finance 台股延遲報價20分鐘<br>
+     *成交金額： 單位為新台幣百萬（10的六次方）<br>
+     *成交量： 單位為千張（10的三次方）<br>
+     *G-Trend： Google Trend 每週統計搜尋數量, 急降代表股價即將下殺, 適用於熱門股. 數值為此股票相對歷史的高度, 不同股票間不能比較<br>
+     *G-Trend漲跌： 以週為單位，今天的MA7和七天前MA7比較<br>
+     *布林位置： 當前股價距20日布林通道下緣的比例，小於0%可以買. 布林寬度大於10%才顯示布林位置<br>
+     *財報季: 只顯示最新一季. EPS 計算為近四季，例如 ~21Q2 代表 20Q3~21Q2<br>
+     *EPS: FinMind下載的每股盈餘, 為過去四季總和。<a target='_blank' href='https://mops.twse.com.tw/mops/web/t163sb04'>公開資訊觀測站</a>的季度EPS相同但顯示為年度累積，例如第三季EPS為第一季+第二季+第三季<br>
+     *EPS: 每年5/15前公布Q1, 8/14前公布Q2, 11/14前公布Q3, 隔年3/31前公布前年Q4. <br>
+     *本益比: 即時股價 / 過去四季EPS總和（注意：財報狗本益比使用月均價，而不是即時股價）<br>
+     *處置股： 5分鐘搓合代表單筆十張或累積30張則全額交割，20分鐘以上都全額交割, 資料來源為
+     <a target='_blank' href='https://www.twse.com.tw/zh/page/announcement/punish.html'>上市處置股</a>及
+     <a target='_blank' href='https://www.tpex.org.tw/web/bulletin/disposal_information/disposal_information.php?l=zh-tw'>上櫃處置股</a><br>
+  </p>
+  <p>
+     <a target='_blank' href='{{ html_global_log_file }}'>*tw log file</a><br>
+  </p>  
+  {% autoescape false %} 
+  <p><font color='#00A600'>{{ html_global_warn }}</font></P>
+  {% endautoescape %}
+  </body>
+</html>
+
+
