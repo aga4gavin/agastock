@@ -97,7 +97,7 @@ LINE 通知:
     ```sh 
     python3 parse_stock.py -tw  #should print "Parse XX tickers successfully"
     python3 parse_stock.py -us  #should print "Parse XX tickers successfully"
-    ls out  #should print "line_notify_tw.csv  line_notify_us.csv  stock_summary_tw.csv  stock_summary_us.csv"
+    ls out  #should print "line_notify_tw.csv line_notify_us.csv stock_summary_tw.csv stock_summary_us.csv"
     ```  
     確保 /agastock/out/ 目錄有產生以上四個 csv 檔案
     
