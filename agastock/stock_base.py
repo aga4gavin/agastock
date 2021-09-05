@@ -342,7 +342,7 @@ class StockBase:
         expire_date= notify_date + timedelta(days=expire_days) #type: datetime.datetime
         _df_new= pd.DataFrame(  {"notify_date":[notify_date], "expire_date":[expire_date], "reason":[reason], "ticker":[ticker], "name":[name], 'notified':[False], 'msg':msg} )
         self._df_notify_list= self._df_notify_list.append(_df_new)    
-                
+
         
     #等所有資訊蒐集完，把 _queue_line_notify() 累積的 notify msg 加上 cust_msg 並送出
     def push_out_line_notify(self) -> None: 
@@ -384,7 +384,7 @@ class StockBase:
         
         
     #輸出 stock csv
-    def write_stock_csv(self):
+    def write_stock_csv(self) -> None:
         #給web_root.py看的資訊，放在table首位[0]，後面[1:]都不填
         ticker0= self._ticker_list[0]
         self._data[ticker0]['VAR_WebMsg']= self._web_msg 
@@ -487,7 +487,7 @@ class StockBase:
     #寫入股價資料： 股價，漲跌，成交金額，成交量
     #歷史股價寫到 self._df_price_list[]. 若是盤中，最新一筆為即時資料
     @QueryHandler_NoLoop( init_vars=['股價', '漲跌', '成交金額', '成交量'] )  #init_vars[] 為網頁顯示順序. 不能設定expire_hours, 因為此函式要寫入df_price_list[]給BBand使用
-    def _query_price_yfinance(self, data_name, tickets_yf_str:str) -> None:
+    def _query_price_yfinance(self, data_name, tickets_yf_str:str) -> bool:
         #======== 下載 yfinance 歷史股價 ========
         #注意： yfinance 常下載到無資料的日期，若一支支股票下載日期會直接消失，因此需要整批股票一起下載，部分股票的無資料日才能顯示斷層
         start_date= datetime.now() - timedelta(days=STOCK_QUERY_DAYS)
@@ -682,7 +682,7 @@ class StockBase:
     #前提： get_stock_data() 寫好_data: TMP_GTName
     #寫入資料： G-Trend，G-Trend漲跌，HD_GT_URL
     @QueryHandler_ThreadLoop( expire_hours=GTREAD_EXPIRE_HOURS, init_vars=['G-Trend','G-Trend漲跌', 'HD_GT_URL'] )  #init_vars[] 為網頁顯示順序
-    def query_google_trend(self, data_name, ticker, tdata, prev_tdata) -> None:
+    def query_google_trend(self, data_name, ticker, tdata, prev_tdata) -> bool:
         #ETF不查詢 Google Trend，未設定 TMP_GTName 也不查詢
         if is_invalid(tdata['TMP_GTName']):  
             agalog.debug("  %-5s:　未設定  Google Trend 字串，不查詢 Google Trend"%(ticker))

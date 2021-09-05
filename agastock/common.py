@@ -29,7 +29,7 @@ PATH_STOCK_PARSER_LOG_REGION= DIR_BASE + URL_STOCK_PARSER_LOG_REGION
 URL_IMG_REGION= "/static/img/%s_stock_%s_%s.png"  #第一個%s將代換為tw or us, 第二個%s將代換為股票代號(例如0050, AAPL), 第三個%s將代換為bb or gtrend or ma
 PATH_IMG_REGION= DIR_BASE + URL_IMG_REGION
    
- 
+
 # ============ FUNCTION DataFrame處理 ============
 def df_check_columns(df, exp_columns):
     for col in exp_columns:

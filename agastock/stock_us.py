@@ -73,10 +73,10 @@ class StockUs(StockBase):
         tickets_yf_str= ' '.join(self._ticker_list)
         return self._query_price_yfinance(tickets_yf_str)
         
-
+ 
     #寫入財報資料： 本益比，本益比預估，EPS，EPS預估，EPS成長預估，EPS成長預估
     @QueryHandler_ThreadLoop( expire_hours=FINANCE_EXPIRE_HOURS, init_vars=['本益比', '本益比預估', 'EPS', 'EPS預估', 'EPS成長預估', 'EPS成長預估'] )  #init_vars[] 為網頁顯示順序
-    def query_finance(self, data_name, ticker, tdata, prev_tdata) -> None:        
+    def query_finance(self, data_name, ticker, tdata, prev_tdata) -> bool:        
         t = yf.Ticker(ticker)
         tdata['EPS']= get_valid_value2(t.info,'trailingEps')
         tdata['EPS預估']= get_valid_value2(t.info,'forwardEps')                

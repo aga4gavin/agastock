@@ -23,11 +23,11 @@ from datetime import date, datetime, timedelta
 #=========== PARAMETER ============    
 _PATH_LOCK_FILE= '/tmp/parse_stock_%s.lock'
 
-    
+
 #============ FUNCTION ============   
 #避免重複執行
 #需使用全域變數接收回傳值，因為區域變數在function結束，回收變數一併釋放file locking         
-def exit_if_dup_execute(lock_file):
+def exit_if_dup_execute(lock_file) -> None:
     try:
         h_lock_file= open(lock_file, 'w')  #create if not exist 
         fcntl.flock(h_lock_file, fcntl.LOCK_EX | fcntl.LOCK_NB)
