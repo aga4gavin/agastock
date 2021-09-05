@@ -4,7 +4,7 @@
 # config.py
 # 參數設定
 #
-# Gavin Lee 2021/08
+# Copyright ©2021 [Gavin Lee], et. al.
 #=============================================================
 import logging
 

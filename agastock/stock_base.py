@@ -12,7 +12,7 @@
 #   HD_XXX： 其他隱藏欄位，例如 (例如VAR_finance_ExpireTime是給Stock class自己看的， HD_GT_URL是讓web_root.py產生超連接使用)
 #   其他： 寫入 stock csv， 由 web_root.py 讀取顯示於 summary 頁面
 #
-# Gavin Lee 2021/08
+# Copyright ©2021 [Gavin Lee], et. al.
 #=============================================================
 #agastock module
 from common import *

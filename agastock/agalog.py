@@ -5,7 +5,7 @@
 # 
 # 此module是為了啟用DEBUG level卻不印出其他module訊息
 #
-# Gavin 2021/08
+# Copyright ©2021 [Gavin Lee], et. al.
 #=============================================================
 #agastock module
 from config import *

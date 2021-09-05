@@ -1,5 +1,11 @@
-/* https://www.cjavapy.com/article/209/  */
-/* includes alternating gray and white with on-hover color */
+/*
+#=============================================================
+# <agastock>
+# style.css
+#
+# Copyright ©2021 [Gavin Lee], et. al.
+#=============================================================
+ */
 .stock_table {
     font-size: 11pt; 
     font-family: Arial;

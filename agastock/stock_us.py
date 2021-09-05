@@ -4,7 +4,7 @@
 # stock_us.py
 # 分析美股用的 StockUs
 #
-# Gavin Lee 2021/08
+# Copyright ©2021 [Gavin Lee], et. al.
 #=============================================================
 #agastock module
 from common import *

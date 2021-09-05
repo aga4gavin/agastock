@@ -4,7 +4,7 @@
 # stock_twn.py
 # 分析台股用的 StockTwn
 #
-# Gavin Lee 2021/08
+# Copyright ©2021 [Gavin Lee], et. al.
 #=============================================================
 #agastock module
 from common import *

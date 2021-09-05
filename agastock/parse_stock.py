@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 #=============================================================
 # <agastock>
-# parse_stock.py <-us|-tw>
+# parse_stock.py
 #
-# Gavin Lee 2021/08
+# Usage:
+#   parse_stock.py <-us|-tw>
+#
+# Copyright ©2021 [Gavin Lee], et. al.
 #=============================================================
 #agastock module
 from common import *

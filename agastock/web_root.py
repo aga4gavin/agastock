@@ -13,7 +13,7 @@
 #   /us/AAPL => us AAPL detail
 #   /staic/img/us_stock_AAPL_bb.png  => us AAPL image
 #
-# Gavin Lee 2021/08
+# Copyright ©2021 [Gavin Lee], et. al.
 #=============================================================
 #agastock module
 from common import *

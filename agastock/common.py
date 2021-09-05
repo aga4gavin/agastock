@@ -3,7 +3,7 @@
 # <agastock>
 # common.py
 #
-# Gavin Lee 2021/08
+# Copyright ©2021 [Gavin Lee], et. al.
 #=============================================================
 #agastock module
 from config import *
