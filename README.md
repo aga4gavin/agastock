@@ -356,7 +356,7 @@ agastock
  
 ## 已知問題
 - Yahoo Finance 讀取台股，有時股價全部 NaN，並且股價日期為週末
-- Yahoo Finance 有時候部分日期 NaN，並且回去幾天Volume都爆量一百倍，可在 [config.py](agastock/config.py) 開啟YFINANCE_FIX_HIGH_VOLUME啟用修正機制
+- Yahoo Finance 有時候部分日期 NaN，並且回去幾天Volume都爆量一百倍，可在 [config.py](agastock/config.py) 開啟 YFINANCE_FIX_HIGH_VOLUME 啟用修正機制
   
 ## 參考資料
 - Python dataframe talbe format，https://www.cjavapy.com/article/209/
