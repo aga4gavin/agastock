@@ -65,7 +65,7 @@ LINE 通知:
     pip3 install ta-lib  
     ```  
     
-1. 使用 matplotlib 繪圖，需設定中文字形，不然圖片的中文字無法顯示  
+1. 需設定中文字型，matplotlib 繪圖時才能顯示中文字示 
     1. 編輯 matplotlib 設定檔
         ```sh  
         mpath=`python3 -c "import matplotlib;print(matplotlib.matplotlib_fname())"`
