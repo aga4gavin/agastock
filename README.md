@@ -65,7 +65,7 @@ LINE 通知:
     1. 編輯 matplotlib 設定檔
         ```sh  
         mpath=`python3 -c "import matplotlib;print(matplotlib.matplotlib_fname())"`
-        echo $mpath   #例如 ~/.local/lib/python3.8/site-packages/matplotlib/mpl-data/matplotlibrc 
+        echo $mpath   #ex. ~/.local/lib/python3.8/site-packages/matplotlib/mpl-data/matplotlibrc 
         vi $mpath
         ```
     1. 將 font.family 與 font.**sans**-serif 註解(#)移除，並在 font.sans-serif 後方加入 Microsoft JhengHei (注意不是 font.**serif**，兩個很像)。範例：  
@@ -82,7 +82,7 @@ LINE 通知:
     1. 刪除字型暫存檔，下次 import matplotlib 才會重讀設定檔   
         ```sh  
         fpath=`python3 -c "import matplotlib;print(matplotlib.get_cachedir())"`
-        echo $fpath  #例如 ~/.cache/matplotlib
+        echo $fpath  #ex. ~/.cache/matplotlib
         rm -f $fpath/fontlist*.json  
         ```
   
@@ -90,12 +90,11 @@ LINE 通知:
     ```sh
     cd ~  
     git clone https://github.com/gavinage0/agastock.git
-    cd agastock
+    cd agastock/agastock/
     ```   
     
 1. 分析台股美股 
-    ```sh
-    cd agastock  
+    ```sh 
     python3 parse_stock.py -tw  #應該印出 Parse XX tickers successfully.
     python3 parse_stock.py -us  #應該印出 Parse XX tickers successfully.
     ls out  #應該印出 line_notify_tw.csv  line_notify_us.csv  stock_summary_tw.csv  stock_summary_us.csv
@@ -167,7 +166,7 @@ LINE 通知:
     - WEB_DEBUG_FLASK 設定 True，可開啟 flask 除錯功能，每次修改 [web_root.py](agastock/web_root.py) 將觸發 flask web server 自動重啟
     - WEB_SERVER_PORT 可更改綁定的 port。若設定標準 http port 80，在 ubuntu 需執行下命令</font>  
         ```sh sudo 
-        pypath=$(realpath /usr/bin/python3)  #例如 /usr/bin/python3.8
+        pypath=$(realpath /usr/bin/python3)  #ex. /usr/bin/python3.8
         sudo setcap 'cap_net_bind_service=+ep' $pypath
         ```
 
