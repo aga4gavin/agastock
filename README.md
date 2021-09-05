@@ -294,25 +294,24 @@ agastock
         1. query_OO(self, ticker, tdata, prev_tdata)  <font color=#008000> #@QueryHandler_ForLoop, @QueryHandler_ThreadLoop </font>  
         - 查詢成功回傳True，若有設定 expire_hours 代表到期前不再查詢。失敗回傳False  
 
-    - Thread
+    - Thread  
         - 被 @QueryHandler_ThreadLoop 修飾的 queue_xxx() 支援 multi-thread，只能呼叫 thread-save 函式
         - 若需呼叫非 thread-save 函式:  
             - 自定 function 可使用 @ThreadSaver 保護，例如 _add_warn_msg()
             - 系統 function 可使用 _thread_mutex.acquire() 及 _thread_mutex.release() 保護，例如 matplotlib
-
-- 指標設計
-        - Google Trend 搜尋時間段可設定以下參數: 
-            1. 'today 12-m' 回傳一年資料，以週為單位，不滿一週的部分得到 partial=False。如果從上個完整周計算的話，資料可能延後1-6天
-            1. 'today 1-m' 回傳一個月資料，以天為單位。可得到昨日資料但只有一個月，但時間太短無法判斷漲跌
-            1. 此套件使用 'today 3-m' 回傳90天資料，以天為單位，缺點是資料延遲三天。因為週末搜尋量劇減，用單日比較若比到週末不公平，八日九日都會計算到週末，七日或七日倍數最適合。因此使用MA7搭配日資料判斷趨勢變化
-        
+- 指標設計  
+    - Google Trend 搜尋時間段可設定以下參數:   
+        1. 'today 12-m' 回傳一年資料，以週為單位，不滿一週的部分得到 partial=False。如果從上個完整周計算的話，資料可能延後1-6天
+        1. 'today 1-m' 回傳一個月資料，以天為單位。可得到昨日資料但只有一個月，但時間太短無法判斷漲跌
+        1. 此套件使用 'today 3-m' 回傳90天資料，以天為單位，缺點是資料延遲三天。因為週末搜尋量劇減，用單日比較若比到週末不公平，八日九日都會計算到週末，七日或七日倍數最適合。因此使用MA7搭配日資料判斷趨勢變化
+       
 - 網頁欄位顯示順序依照 queue_xxx() 初始化 init_vars[] 的順序，例如  
-        - stock.query_bband()      <font color=#008000> #init_vars=['布林位置','布林寬度'] </font>   
-        - stock.query_google_trend() <font color=#008000> #init_vars=['G-Trend','G-Trend漲跌', 'HD_GT_URL']  </font>  
-        - 以上排序為: '布林位置','布林寬度', 'G-Trend','G-Trend漲跌', 'HD_GT_URL'
-    
+    - stock.query_bband()      <font color=#008000> #init_vars=['布林位置','布林寬度'] </font>   
+    - stock.query_google_trend() <font color=#008000> #init_vars=['G-Trend','G-Trend漲跌', 'HD_GT_URL']  </font>  
+    - 以上排序為: '布林位置','布林寬度', 'G-Trend','G-Trend漲跌', 'HD_GT_URL'
+
 - 命名規則
-        - _XXX，一個底線開頭的變數或函式，在父類別 StockBase 和子類別 StockUs/StockTwn 之間共用，外界不該使用
+    - _XXX，一個底線開頭的變數或函式，在父類別 StockBase 和子類別 StockUs/StockTwn 之間共用，外界不該使用
 
 - [web_root.py](agastock/web_root.py) 負責將 stock_summary_xx.csv 顯示為網頁，以下為網址範例：
     - http://127.0.0.1:8080/tw => tw summary  
