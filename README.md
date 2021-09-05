@@ -94,7 +94,7 @@ LINE 通知:
 1. 取得 agastock source code    
     ```sh
     cd ~  
-    git clone https://github.com/agastock/agastock.git
+    git clone https://github.com/aga4gavin/agastock.git
     cd agastock/agastock/
     ```   
     
