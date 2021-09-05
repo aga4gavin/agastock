@@ -105,7 +105,7 @@ LINE 通知:
     ```sh
     python3 web_root.py  
     ```
-    以瀏覽器開啟網址，若是本機可開啟 http://127.0.0.1:8080/ ，網頁應顯示剛產生的 stock_summary_tw.csv 及 stock_summary_us.csv
+    以瀏覽器開啟網址，若是本機可開啟 http://127.0.0.1:8080/ ，網頁應顯示剛產生的 stock_summary_xxw.csv。若是EC2，Flask印出的log可能是內網IP地址，外網IP地址要到EC2管理介面查看
     
 1. 設定台灣時區並編輯排程
     ```sh 
