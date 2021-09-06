@@ -73,7 +73,7 @@ LINE 通知:
         vi $mpath
         ```
         
-    1. 將 font.family 與 font.**sans**-serif 註解(#)移除，並在 font.sans-serif 後方加入 Microsoft JhengHei (注意不是 font.**serif**，兩個很像)。範例：  
+    1. 將 font.family 與 font.**sans**-serif 註解(#)移除，並在 font.sans-serif 後方加入 "Microsoft JhengHei (注意不是 font.**serif**，兩個很像)。範例：  
         <img src="./doc/matplotlib_setting.png" width="85%"/>   
       
     1. 下載微軟雅黑 (Microsoft JhengHei) 字型，複製到 matplotlib 字型目錄
