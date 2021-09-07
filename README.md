@@ -39,7 +39,7 @@ LINE 通知:
 <img src="./doc/screenshot_linebot.jpg" width="40%" />   
 
 ## 如何開始
-以下步驟於 Ubuntu 18.04 及 20.04 測試  
+以下步驟於 Ubuntu 18.04 及 20.04 測試。Ubuntu 20.04 on Windows Subsystem for Linux (WSL) 也可使用，但需將 crontab 改成 Windows 排程。
 
 1. 安裝 Python 及 agastock 需要的相依套件，加上 ta-lib 約占用 740MBytes 硬碟空間
     ```sh
@@ -49,7 +49,7 @@ LINE 通知:
              twstock line-bot-sdk flask pyquery colorlog pytrends  #require around 260MBytes
     ```
     
-1. 更新 twstock 台股名稱資料庫，才能查詢到新上市股票的名稱，產業，及上市上櫃別。依照 yfinance 要求，查詢股價時將為上市台股代號加.TW，上櫃加.TWO，例如 91APP 為 6741.TWO  
+1. 更新 twstock 台股名稱資料庫，才能查詢到新上市股票的名稱，產業，上市上櫃別。資料庫未更新可能查不到新股股價，例如 91app。因為查詢 yfinance 時需要區別上市及上櫃，上市加上.TW，上櫃加上.TWO，加錯即無法查到。  
     ```sh
     python3 -c "import twstock;twstock.__update_codes()"
     ```   
@@ -65,7 +65,7 @@ LINE 通知:
     pip3 install ta-lib  
     ```  
     
-1. 需設定中文字型，matplotlib 繪圖時才能顯示中文字示 
+1. 需設定中文字型，matplotlib 繪圖時才能顯示中文 
     1. 編輯 matplotlib 設定檔
         ```sh  
         mpath=`python3 -c "import matplotlib;print(matplotlib.matplotlib_fname())"`
