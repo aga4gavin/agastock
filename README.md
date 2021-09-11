@@ -220,7 +220,7 @@ LINE 通知:
 
 ## 各套件使用限制
 - FinMind： [官網說明](https://finmindtrade.com/analysis/#/Sponsor/sponsor) 未輸入TW_FM_TOKEN每小時300次，免費會員每小時600次，付費Backer提高到每小時1600次
-- 證交所： [根據twstock說明](https://github.com/mlouielu/twstock)，每 5 秒鐘 3 個 request，超過的話會被 ban 掉，據說每次request間隔1秒即可，
+- 證交所： [根據twstock說明](https://github.com/mlouielu/twstock)，每 5 秒鐘 3 個 request，超過的話會被 ban，據說每次request間隔1秒即可，
 - Google Trend： [據此部落格](https://github.com/GeneralMills/pytrends/issues/202)說明，每小時400次
 - LINE bot ：[官網說明](https://tw.linebiz.com/service/account-solutions/line-official-account/)，LINE Message API 免費帳號一個月可傳送 500 則訊息。
 - Yahoo Finance： [據此部落格](https://towardsdatascience.com/free-stock-data-for-python-using-yahoo-finance-api-9dafd96cad2e)說明，每小時 2000次 request
@@ -352,7 +352,7 @@ agastock
         _query_punish_stock() #台股處置股，台股證交所只要隔一秒讀取就不會被 ban  
         ```
  
-1. 為何股價圖有段時間梅線圖或是交易量暴增100倍？  
+1. 為何股價圖有段時間沒線圖或是交易量暴增100倍？  
     - 請見[已知問題](#已知問題)，此為 Yahoo Finance 的 bug
  
 1. LINE 通知需要收費嗎？
