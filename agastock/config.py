@@ -17,6 +17,7 @@ LINEBOT_ID= ''
 LINEBOT_TOKEN= ''
                                   
 #之前需要付費的FinMind帳號才能下載台股EPS，本益比等，現在好像不用了, https://finmindtrade.com/
+#FindMind，[使用者資訊]頁面，顯示為 "api token 金鑰"
 TW_FM_TOKEN= ''
 
 
