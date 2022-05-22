@@ -707,7 +707,7 @@ class StockBase:
         # 若使用'now 7-d', 雖然可以去除近三天資料，但只有七天不足以判斷
         # 最後使用'toady 3-m', 有每日資料，缺點是近三天的資料沒有, 例如今天是2021/7/14, 最新資料只到2021/7/11
         try:
-            pytrend= TrendReq(hl='zh-TW', tz=360) #hl為關鍵字系, 但設定'zh-TW' or 'en-US'得到相同結果. tz為時區,但設為360 or 180也得到相同結果
+            pytrend= TrendReq(hl='zh-TW', tz=360) #hl為關鍵字語系, 但設定'zh-TW' or 'en-US'得到相同結果. tz為時區,但設為360 or 180也得到相同結果
             pytrend.build_payload(kw_list=[gt_name], cat=0, timeframe='today 3-m', geo=self.REGION.upper(), gprop='') #一次最多查詢五個字串，此處只查一個
             df_gtrend= pytrend.interest_over_time()
 
